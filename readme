@@ -1,0 +1,2 @@
+occ-fft: now only for [1,1,1] k-points and rhf.(TODO: k-points)
+Need PySCF
