@@ -1,5 +1,6 @@
 openMP+MPI occ-fft: 
 
 make FFTDF faster for gamma and k-points PBC system by using occ- method 
+It is just an uniform grids occ-sgX for PBC system by using FFT to get 1e integrals 
 
 Need PySCF
