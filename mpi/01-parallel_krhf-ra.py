@@ -41,7 +41,7 @@ cell.build()
 kpts = cell.make_kpts([2,2,2])
 mf = pscf.KRHF(cell, kpts)
 mf.with_df = df.FFTDF(cell, kpts)
-#mf.with_df.occ = True
+mf.with_df.occ = True
 mf.verbose = 4
 
 ehf = mf.kernel()
