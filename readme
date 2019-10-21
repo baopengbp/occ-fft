@@ -1,2 +1,5 @@
-occ-fft: now only for [1,1,1] k-points and rhf.(TODO: k-points)
+openMP+MPI occ-fft: 
+
+make FFTDF faster for gamma and k-points PBC system by using occ- method 
+
 Need PySCF
