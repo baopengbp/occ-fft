@@ -17,7 +17,9 @@
 #
 # Modified from pyscf/pbc/df/fft_jk.py
 #
-# ref: Lin, L. J. Chem. Theory Comput. 2016, 12, 2242\u22122249.
+# ref: Lin, L. J. Chem. Theory Comput. 2016, 12, 2242-2249.
+#
+# "MKL_NUM_THREADS=32 OMP_NUM_THREADS=32 python 20-k_points_scf_ra.py"
 #
 
 '''
