@@ -4,7 +4,9 @@
 #
 # Modified from mpi4pyscf/pbc/df/fft_jk.py
 #
-# ref: Lin, L. J. Chem. Theory Comput. 2016, 12, 2242\u22122249.
+# ref: Lin, L. J. Chem. Theory Comput. 2016, 12, 2242-2249.
+#
+# "MKL_NUM_THREADS=2 OMP_NUM_THREADS=2 mpirun -np 16 python 01-parallel_krhf-ra.py"
 #
 
 '''
