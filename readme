@@ -3,6 +3,6 @@ openMP+MPI occ-fft:
 make FFTDF faster for gamma and k-points PBC system by using occ- method 
 It is just an uniform grids occ-sgX for PBC system by using FFT to get 1e integrals 
 
-The openMP+MPI occ-fft is already in mpi4pyscf dev version, see the example occ-fft/mpi/01-parallel_krhf-ra.py to do calculation.
+The openMP+MPI occ-fft is already in mpi4pyscf dev version, see the example occ-fft/mpi/01-parallel_krhf_occ.py to do calculation.
 
 Need PySCF
