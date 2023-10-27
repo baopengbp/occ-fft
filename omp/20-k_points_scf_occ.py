@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
 '''
-Mean field with k-points sampling
+Mean field with k-points sampling using occ-fft to compute faster
 
 The 2-electron integrals are computed using Poisson solver with FFT by default.
 In most scenario, it should be used with pseudo potential.
 '''
-import time
 from pyscf.pbc import gto, scf, dft, df
 import numpy
 from pyscf import lib
@@ -29,7 +28,6 @@ cell = gto.M(
     #verbose = 4,
 )
 
-Jtime=time.time()
 nk = [1,1,2]  # 4 k-poins for each axis, 4^3=64 kpts in total
 kpts = cell.make_kpts(nk)
 kmf = scf.KRHF(cell, kpts)
@@ -37,30 +35,3 @@ kmf.with_df.occ = True
 kmf.verbose = 4
 #kmf.max_cycle = 0
 kmf.kernel()
-print "Took this long for total: ", time.time()-Jtime
-
-exit()
-
-kmf.with_df = df.DF(cell, kpts)
-print(kmf.scf())
-
-
-mf = scf.RHF(cell)
-ehf = mf.kernel()
-print("HF energy (per unit cell) = %.17g" % ehf)
-
-
-kmf = dft.KRKS(cell, kpts)
-# Turn to the atomic grids if you like
-kmf.grids = dft.gen_grid.BeckeGrids(cell)
-kmf.xc = 'm06,m06'
-kmf.kernel()
-
-
-#
-# Second order SCF solver can be used in the PBC SCF code the same way in the
-# molecular calculation
-#
-mf = scf.KRHF(cell, kpts).newton()
-mf.kernel()
-
